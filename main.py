@@ -361,14 +361,14 @@ class ResultScreen(Screen):
         self.prob_healthy = p_healthy * 100
         
         # Set text labels
-        self.prob_blight_pct = f"{int(p_blight * 100)}%"
-        self.prob_rust_pct = f"{int(p_rust * 100)}%"
-        self.prob_gray_pct = f"{int(p_gray * 100)}%"
-        self.prob_healthy_pct = f"{int(p_healthy * 100)}%"
+        self.prob_blight_pct = f"{round(p_blight * 100)}%"
+        self.prob_rust_pct = f"{round(p_rust * 100)}%"
+        self.prob_gray_pct = f"{round(p_gray * 100)}%"
+        self.prob_healthy_pct = f"{round(p_healthy * 100)}%"
         
         # Find predicted confidence
         max_prob = max(p_blight, p_rust, p_gray, p_healthy)
-        self.pred_confidence = f"{max_prob:.2f} ({int(max_prob * 100)}%)"
+        self.pred_confidence = f"{max_prob:.2f} ({round(max_prob * 100)}%)"
 
     def save_results(self):
         import datetime
